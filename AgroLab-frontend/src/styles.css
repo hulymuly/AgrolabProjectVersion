@@ -1,0 +1,51 @@
+
+
+.table-scroll {
+    max-height: max-content; /* высота таблицы */
+    overflow-y: auto; /* добавляем скролл */
+    display: block; /* делаем таблицу блоковым элементом */
+}
+
+.table-scroll tbody {
+    display: block; /* делаем tbody блоковым элементом */
+    max-height: 650px; /* высота tbody */
+    overflow-y: auto; /* добавляем скролл */
+}
+
+.table-scroll thead, .table-scroll tbody tr {
+    display: table; /* делаем thead и tr таблицей */
+    width: 100%; /* ширина таблицы */
+    table-layout: fixed; /* фиксируем ширину таблицы */
+}
+
+.table-scroll thead {
+    background-color: #f0f0f0; /* цвет фона thead */
+    position: sticky; /* делаем thead sticky */
+    top: 0; /* позиция thead */
+    z-index: 1; /* индекс z */
+}
+.table-scroll th{
+    min-width: 120px; /* минимальная ширина ячейки */
+    white-space: normal; /* предотвращаем перенос текста */
+}
+.table-scroll td {
+    min-width: 120px; /* минимальная ширина ячейки */
+    white-space: normal; /* предотвращаем перенос текста */
+}
+
+@media (max-width: 1280px) {
+    .table-scroll {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .table-scroll th{
+        padding: 0.3rem 0.05rem;
+        font-size: 0.54rem;
+    }
+
+    .table-scroll td {
+        padding: 0.3rem 0.05rem;
+        font-size: 0.68rem;
+    }
+}

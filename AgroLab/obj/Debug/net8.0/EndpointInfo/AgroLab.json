@@ -1,0 +1,4928 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "AgroLab",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/users/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/me": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/change-password": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChemicalExpenses": {
+      "get": {
+        "tags": [
+          "ChemicalExpenses"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChemicalExpense"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChemicalExpense"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChemicalExpense"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ChemicalExpenses"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalExpenseCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalExpenseCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalExpenseCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChemicalExpenses/{id}": {
+      "get": {
+        "tags": [
+          "ChemicalExpenses"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChemicalExpense"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChemicalExpense"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChemicalExpense"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ChemicalExpenses"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalExpenseUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalExpenseUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalExpenseUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ChemicalExpenses"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChemicalParish": {
+      "get": {
+        "tags": [
+          "ChemicalParish"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChemicalParish"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChemicalParish"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChemicalParish"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ChemicalParish"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalParishCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalParishCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalParishCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChemicalParish/{id}": {
+      "get": {
+        "tags": [
+          "ChemicalParish"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChemicalParish"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChemicalParish"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChemicalParish"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ChemicalParish"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalParishUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalParishUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChemicalParishUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ChemicalParish"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cultures": {
+      "get": {
+        "tags": [
+          "Cultures"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CultureDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CultureDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CultureDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Cultures"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CultureCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CultureCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CultureCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cultures/{id}": {
+      "put": {
+        "tags": [
+          "Cultures"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CultureUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CultureUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CultureUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cultures"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Customers": {
+      "get": {
+        "tags": [
+          "Customers"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerResponseDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerResponseDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Customers/{id}": {
+      "put": {
+        "tags": [
+          "Customers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Customers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Equipment": {
+      "get": {
+        "tags": [
+          "Equipment"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EquipmentResponseDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EquipmentResponseDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EquipmentResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Equipment"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipmentCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipmentCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipmentCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Equipment/{id}": {
+      "put": {
+        "tags": [
+          "Equipment"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipmentUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipmentUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipmentUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Equipment"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Export/seeds": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Export/plants": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Export/potatoes": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Export/soil": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Labels/{category}/{id}": {
+      "get": {
+        "tags": [
+          "Labels"
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Labels"
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LabelDataDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LabelDataDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LabelDataDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Notifications": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NotificationDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NotificationDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NotificationDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Plants": {
+      "get": {
+        "tags": [
+          "Plants"
+        ],
+        "parameters": [
+          {
+            "name": "cultureId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "customer",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dateFrom",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "dateTo",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "desc",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Plant"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Plant"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Plant"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Plants"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Plant"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Plant"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Plant"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plant"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plant"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plant"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Plants/{id}": {
+      "get": {
+        "tags": [
+          "Plants"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plant"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plant"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plant"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Plants"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Plant"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Plant"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Plant"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Plants"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Potatoes": {
+      "get": {
+        "tags": [
+          "Potatoes"
+        ],
+        "parameters": [
+          {
+            "name": "cultureId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "reproductionId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "customer",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dateFrom",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "dateTo",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "desc",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Potatoes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PotatoCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PotatoCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PotatoCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Potatoes/{id}": {
+      "get": {
+        "tags": [
+          "Potatoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Potato"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Potato"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Potato"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Potatoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PotatoUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PotatoUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PotatoUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Potatoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Protocols": {
+      "get": {
+        "tags": [
+          "Protocols"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Protocols"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "File": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Protocols/{id}": {
+      "get": {
+        "tags": [
+          "Protocols"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Protocols"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Protocols/seeds/{id}/generate": {
+      "post": {
+        "tags": [
+          "Protocols"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeedProtocolDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeedProtocolDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeedProtocolDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Protocols/plants/{id}/generate": {
+      "post": {
+        "tags": [
+          "Protocols"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlantProtocolDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlantProtocolDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlantProtocolDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Providers": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Provider"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Provider"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Provider"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Providers"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProviderCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProviderCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProviderCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Providers/{id}": {
+      "get": {
+        "tags": [
+          "Providers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Provider"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Provider"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Provider"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Providers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProviderUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProviderUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProviderUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Providers"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reagents": {
+      "get": {
+        "tags": [
+          "Reagents"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReagentWithParishDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReagentWithParishDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReagentWithParishDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Reagents"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReagentCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReagentCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReagentCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reagents/{id}": {
+      "put": {
+        "tags": [
+          "Reagents"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReagentUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReagentUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReagentUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Reagents"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reports/popularity": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reports/comparison": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reports/reagents/stock": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reports/cultures/popularity": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reports/expired": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Samples": {
+      "get": {
+        "tags": [
+          "Samples"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SampleDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SampleDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SampleDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Samples"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SampleDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SampleDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SampleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Samples/{id}": {
+      "get": {
+        "tags": [
+          "Samples"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SampleDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SampleDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SampleDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Samples"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SampleDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SampleDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SampleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Samples/{category}/{id}": {
+      "delete": {
+        "tags": [
+          "Samples"
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Samples/analysis": {
+      "post": {
+        "tags": [
+          "Samples"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SampleAnalysisInputDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SampleAnalysisInputDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SampleAnalysisInputDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Samples/{category}/{id}/protocol": {
+      "get": {
+        "tags": [
+          "Samples"
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Seeds": {
+      "get": {
+        "tags": [
+          "Seeds"
+        ],
+        "parameters": [
+          {
+            "name": "cultureId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "reproductionId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "dateFrom",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "dateTo",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "desc",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Seed"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Seed"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Seed"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Seeds"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeedCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeedCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeedCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Seeds/{id}": {
+      "get": {
+        "tags": [
+          "Seeds"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Seed"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Seed"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Seed"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Seeds"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeedUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeedUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeedUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Seeds"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ChangePasswordDto": {
+        "type": "object",
+        "properties": {
+          "oldPassword": {
+            "type": "string",
+            "nullable": true
+          },
+          "newPassword": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChemicalExpense": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reagentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "expenseDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "quantityUsed": {
+            "type": "number",
+            "format": "double"
+          },
+          "gostMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "solution": {
+            "type": "string",
+            "nullable": true
+          },
+          "solutionQuantity": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "storage": {
+            "type": "string",
+            "nullable": true
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "reagent": {
+            "$ref": "#/components/schemas/Reagent"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChemicalExpenseCreateDto": {
+        "type": "object",
+        "properties": {
+          "reagentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "expenseDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "quantityUsed": {
+            "type": "number",
+            "format": "double"
+          },
+          "gostMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "solution": {
+            "type": "string",
+            "nullable": true
+          },
+          "solutionQuantity": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "storage": {
+            "type": "string",
+            "nullable": true
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChemicalExpenseUpdateDto": {
+        "type": "object",
+        "properties": {
+          "reagentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "expenseDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "quantityUsed": {
+            "type": "number",
+            "format": "double"
+          },
+          "gostMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "solution": {
+            "type": "string",
+            "nullable": true
+          },
+          "solutionQuantity": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "storage": {
+            "type": "string",
+            "nullable": true
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChemicalParish": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reagentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "receiptDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "quantityReceived": {
+            "type": "number",
+            "format": "double"
+          },
+          "receivedFrom": {
+            "type": "string",
+            "nullable": true
+          },
+          "approvalDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "supplierId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "batchNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "reagent": {
+            "$ref": "#/components/schemas/Reagent"
+          },
+          "supplier": {
+            "$ref": "#/components/schemas/Provider"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChemicalParishCreateDto": {
+        "type": "object",
+        "properties": {
+          "reagentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "receiptDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "quantityReceived": {
+            "type": "number",
+            "format": "double"
+          },
+          "receivedFrom": {
+            "type": "string",
+            "nullable": true
+          },
+          "approvalDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "supplierId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "batchNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChemicalParishUpdateDto": {
+        "type": "object",
+        "properties": {
+          "reagentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "receiptDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "quantityReceived": {
+            "type": "number",
+            "format": "double"
+          },
+          "receivedFrom": {
+            "type": "string",
+            "nullable": true
+          },
+          "approvalDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "supplierId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "batchNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Culture": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "plants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Plant"
+            },
+            "nullable": true
+          },
+          "potatoNorms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PotatoNorm"
+            },
+            "nullable": true
+          },
+          "potatoes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Potato"
+            },
+            "nullable": true
+          },
+          "seedNorms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SeedNorm"
+            },
+            "nullable": true
+          },
+          "seeds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Seed"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CultureCreateDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "seedNorms": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "potatoNorms": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CultureDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "seedNorms": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "potatoNorms": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CultureUpdateDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "seedNorms": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "potatoNorms": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Customer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "inn": {
+            "type": "string",
+            "nullable": true
+          },
+          "orgAndLegalForm": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "kpp": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerCreateDto": {
+        "required": [
+          "address",
+          "inn",
+          "kpp",
+          "name",
+          "org_and_legal_form"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "inn": {
+            "maxLength": 12,
+            "minLength": 0,
+            "type": "string"
+          },
+          "kpp": {
+            "maxLength": 12,
+            "minLength": 0,
+            "type": "string"
+          },
+          "org_and_legal_form": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "address": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "inn": {
+            "type": "string",
+            "nullable": true
+          },
+          "kpp": {
+            "type": "string",
+            "nullable": true
+          },
+          "org_and_legal_form": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerUpdateDto": {
+        "required": [
+          "address",
+          "inn",
+          "kpp",
+          "name",
+          "org_and_legal_form"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "inn": {
+            "maxLength": 12,
+            "minLength": 0,
+            "type": "string"
+          },
+          "kpp": {
+            "maxLength": 12,
+            "minLength": 0,
+            "type": "string"
+          },
+          "org_and_legal_form": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "address": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EquipmentCreateDto": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "category": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "model": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "inventoryNumber": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "factoryNumber": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfCommissioning": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "certificateNumber": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "inspectionDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "validUntilDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "width": {
+            "maximum": 10000,
+            "minimum": 0,
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "length": {
+            "maximum": 10000,
+            "minimum": 0,
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "height": {
+            "maximum": 10000,
+            "minimum": 0,
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "depth": {
+            "maximum": 10000,
+            "minimum": 0,
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "dateOfDecommissioning": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EquipmentResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "model": {
+            "type": "string",
+            "nullable": true
+          },
+          "inventoryNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "factoryNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfCommissioning": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "certificateNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "inspectionDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "validUntilDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "width": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "length": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "height": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "depth": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "dateOfDecommissioning": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EquipmentUpdateDto": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "category": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "model": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "inventoryNumber": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "factoryNumber": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfCommissioning": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "certificateNumber": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "inspectionDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "validUntilDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "width": {
+            "maximum": 10000,
+            "minimum": 0,
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "length": {
+            "maximum": 10000,
+            "minimum": 0,
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "height": {
+            "maximum": 10000,
+            "minimum": 0,
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "depth": {
+            "maximum": 10000,
+            "minimum": 0,
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "dateOfDecommissioning": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LabelDataDto": {
+        "type": "object",
+        "properties": {
+          "culture": {
+            "type": "string",
+            "nullable": true
+          },
+          "variety": {
+            "type": "string",
+            "nullable": true
+          },
+          "reproduction": {
+            "type": "string",
+            "nullable": true
+          },
+          "harvestYear": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "batchNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "batchWeight": {
+            "type": "string",
+            "nullable": true
+          },
+          "controlUnit": {
+            "type": "string",
+            "nullable": true
+          },
+          "analysisType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NotificationDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "relatedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Plant": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cultureId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "uploadDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "acceptanceFile": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "inn": {
+            "type": "string",
+            "nullable": true
+          },
+          "kpp": {
+            "type": "string",
+            "nullable": true
+          },
+          "testBasis": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleReceiptDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "customer": {
+            "$ref": "#/components/schemas/Customer"
+          },
+          "testDuration": {
+            "type": "string",
+            "nullable": true
+          },
+          "testObjectName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleSelection": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingAct": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingNd": {
+            "type": "string",
+            "nullable": true
+          },
+          "researchDirection": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingPlan": {
+            "type": "string",
+            "nullable": true
+          },
+          "additionalInfo": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateContract": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "contract1c": {
+            "type": "string",
+            "nullable": true
+          },
+          "culture": {
+            "$ref": "#/components/schemas/Culture"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PlantProtocolDto": {
+        "type": "object",
+        "properties": {
+          "executor": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Potato": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cultureId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "reproductionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "uploadDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "acceptanceFile": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "inn": {
+            "type": "string",
+            "nullable": true
+          },
+          "kpp": {
+            "type": "string",
+            "nullable": true
+          },
+          "testBasis": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleReceiptDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "testDuration": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "testObjectName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleSelection": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingAct": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingNd": {
+            "type": "string",
+            "nullable": true
+          },
+          "harvestYear": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "seedCategory": {
+            "type": "string",
+            "nullable": true
+          },
+          "researchDirection": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingPlan": {
+            "type": "string",
+            "nullable": true
+          },
+          "additionalInfo": {
+            "type": "string",
+            "nullable": true
+          },
+          "customer": {
+            "$ref": "#/components/schemas/Customer"
+          },
+          "tuberCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "batchNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "batchWeight": {
+            "type": "string",
+            "nullable": true
+          },
+          "storageLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultsDistribution": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleStoragePeriod": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateContract": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "contract1c": {
+            "type": "string",
+            "nullable": true
+          },
+          "culture": {
+            "$ref": "#/components/schemas/Culture"
+          },
+          "potatoAnalyses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PotatoAnalysis"
+            },
+            "nullable": true
+          },
+          "reproduction": {
+            "$ref": "#/components/schemas/Reproduction"
+          },
+          "passesStandard": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PotatoAnalysis": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "potatoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "normId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "norm": {
+            "$ref": "#/components/schemas/PotatoNorm"
+          },
+          "potato": {
+            "$ref": "#/components/schemas/Potato"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PotatoCreateDto": {
+        "required": [
+          "acceptanceFile",
+          "cultureId",
+          "uploadDate"
+        ],
+        "type": "object",
+        "properties": {
+          "cultureId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reproductionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "uploadDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "acceptanceFile": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "inn": {
+            "type": "string",
+            "nullable": true
+          },
+          "kpp": {
+            "type": "string",
+            "nullable": true
+          },
+          "testBasis": {
+            "type": "string",
+            "nullable": true
+          },
+          "contractNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleReceiptDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "testDuration": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "testObjectName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleCode": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "sampleSelection": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingAct": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingNd": {
+            "type": "string",
+            "nullable": true
+          },
+          "harvestYear": {
+            "maximum": 10000,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "seedCategory": {
+            "type": "string",
+            "nullable": true
+          },
+          "researchDirection": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingPlan": {
+            "type": "string",
+            "nullable": true
+          },
+          "additionalInfo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tuberCount": {
+            "maximum": 10000,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "batchNumber": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "batchWeight": {
+            "type": "string",
+            "nullable": true
+          },
+          "storageLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultsDistribution": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleStoragePeriod": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateContract": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "contract1c": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PotatoNorm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cultureId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "reproductionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "analysis": {
+            "type": "string",
+            "nullable": true
+          },
+          "acceptValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "culture": {
+            "$ref": "#/components/schemas/Culture"
+          },
+          "potatoAnalyses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PotatoAnalysis"
+            },
+            "nullable": true
+          },
+          "reproduction": {
+            "$ref": "#/components/schemas/Reproduction"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PotatoUpdateDto": {
+        "type": "object",
+        "properties": {
+          "cultureId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "reproductionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "uploadDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "acceptanceFile": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "inn": {
+            "type": "string",
+            "nullable": true
+          },
+          "kpp": {
+            "type": "string",
+            "nullable": true
+          },
+          "testBasis": {
+            "type": "string",
+            "nullable": true
+          },
+          "contractNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleReceiptDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "testDuration": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "testObjectName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleSelection": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingAct": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingNd": {
+            "type": "string",
+            "nullable": true
+          },
+          "harvestYear": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "seedCategory": {
+            "type": "string",
+            "nullable": true
+          },
+          "researchDirection": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingPlan": {
+            "type": "string",
+            "nullable": true
+          },
+          "additionalInfo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tuberCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "batchNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "batchWeight": {
+            "type": "string",
+            "nullable": true
+          },
+          "storageLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultsDistribution": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleStoragePeriod": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateContract": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "contract1c": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Provider": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "adress": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactInfo": {
+            "type": "string",
+            "nullable": true
+          },
+          "chemicalParishes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChemicalParish"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProviderCreateDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "adress": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactInfo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProviderUpdateDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "adress": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactInfo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Reagent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "chemicalExpenses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChemicalExpense"
+            },
+            "nullable": true
+          },
+          "chemicalParishes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChemicalParish"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReagentCreateDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "batch": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "stock": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "supplier": {
+            "type": "string",
+            "nullable": true
+          },
+          "receivedFrom": {
+            "type": "string",
+            "nullable": true
+          },
+          "approvalDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReagentUpdateDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "batch": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "consumption": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "stock": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "supplier": {
+            "type": "string",
+            "nullable": true
+          },
+          "receivedFrom": {
+            "type": "string",
+            "nullable": true
+          },
+          "approvalDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReagentWithParishDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "batch": {
+            "type": "string",
+            "nullable": true
+          },
+          "supplier": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "stock": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Reproduction": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "potatoNorms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PotatoNorm"
+            },
+            "nullable": true
+          },
+          "potatoes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Potato"
+            },
+            "nullable": true
+          },
+          "seedNorms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SeedNorm"
+            },
+            "nullable": true
+          },
+          "seeds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Seed"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SampleAnalysisDto": {
+        "type": "object",
+        "properties": {
+          "norm_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "analysis": {
+            "type": "string",
+            "nullable": true
+          },
+          "accept_value": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SampleAnalysisInputDto": {
+        "type": "object",
+        "properties": {
+          "sample_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "analyses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SampleAnalysisValueDto"
+            },
+            "nullable": true
+          },
+          "passes_standard": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SampleAnalysisValueDto": {
+        "type": "object",
+        "properties": {
+          "norm_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SampleDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "culture_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "reproduction_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "customer_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "customer": {
+            "type": "string",
+            "nullable": true
+          },
+          "inn_kpp": {
+            "type": "string",
+            "nullable": true
+          },
+          "inn": {
+            "type": "string",
+            "nullable": true
+          },
+          "kpp": {
+            "type": "string",
+            "nullable": true
+          },
+          "test_basis": {
+            "type": "string",
+            "nullable": true
+          },
+          "upload_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "acceptance_file": {
+            "type": "string",
+            "nullable": true
+          },
+          "sample_receipt_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "contract_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "contract_number": {
+            "type": "string",
+            "nullable": true
+          },
+          "test_object_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "sample_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampling_act": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampling_nd": {
+            "type": "string",
+            "nullable": true
+          },
+          "sample_selection": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampling_plan": {
+            "type": "string",
+            "nullable": true
+          },
+          "research_direction": {
+            "type": "string",
+            "nullable": true
+          },
+          "additional_info": {
+            "type": "string",
+            "nullable": true
+          },
+          "test_duration": {
+            "type": "string",
+            "nullable": true
+          },
+          "test_conditions": {
+            "type": "string",
+            "nullable": true
+          },
+          "harvest_year": {
+            "type": "string",
+            "nullable": true
+          },
+          "seed_category": {
+            "type": "string",
+            "nullable": true
+          },
+          "tuber_count": {
+            "type": "string",
+            "nullable": true
+          },
+          "batch_number": {
+            "type": "string",
+            "nullable": true
+          },
+          "batch_weight": {
+            "type": "string",
+            "nullable": true
+          },
+          "storage_location": {
+            "type": "string",
+            "nullable": true
+          },
+          "results_distribution": {
+            "type": "string",
+            "nullable": true
+          },
+          "sample_storage_period": {
+            "type": "string",
+            "nullable": true
+          },
+          "analyses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SampleAnalysisDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Seed": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cultureId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "reproductionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "uploadDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "acceptanceFile": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "testBasis": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleReceiptDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "testDuration": {
+            "type": "string",
+            "nullable": true
+          },
+          "testObjectName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleSelection": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingAct": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingNd": {
+            "type": "string",
+            "nullable": true
+          },
+          "researchDirection": {
+            "type": "string",
+            "nullable": true
+          },
+          "samplingPlan": {
+            "type": "string",
+            "nullable": true
+          },
+          "additionalInfo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tuberCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "batchNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "batchWeight": {
+            "type": "string",
+            "nullable": true
+          },
+          "storageLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultsDistribution": {
+            "type": "string",
+            "nullable": true
+          },
+          "sampleStoragePeriod": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateContract": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "contract1c": {
+            "type": "string",
+            "nullable": true
+          },
+          "harvestYear": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "seedCategory": {
+            "type": "string",
+            "nullable": true
+          },
+          "culture": {
+            "$ref": "#/components/schemas/Culture"
+          },
+          "reproduction": {
+            "$ref": "#/components/schemas/Reproduction"
+          },
+          "customer": {
+            "$ref": "#/components/schemas/Customer"
+          },
+          "inn": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "kpp": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "seedAnalyses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SeedAnalysis"
+            },
+            "nullable": true
+          },
+          "passesStandard": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SeedAnalysis": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seedsId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "normId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "norm": {
+            "$ref": "#/components/schemas/SeedNorm"
+          },
+          "seeds": {
+            "$ref": "#/components/schemas/Seed"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SeedCreateDto": {
+        "required": [
+          "acceptanceFile",
+          "cultureId",
+          "reproductionId",
+          "uploadDate"
+        ],
+        "type": "object",
+        "properties": {
+          "cultureId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reproductionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "uploadDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "acceptanceFile": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "customer": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "innKpp": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "contractNumber": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "testBasis": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "sampleReceiptDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "testDuration": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "testObjectName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "sampleCode": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "samplingAct": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "samplingNd": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "researchDirection": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "harvestYear": {
+            "maximum": 2100,
+            "minimum": 1900,
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "seedCategory": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "sampleWeight": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "batchNumber": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "batchWeight": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "storageLocation": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "sampleStoragePeriod": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "testConditions": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SeedNorm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cultureId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "reproductionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "analysis": {
+            "type": "string",
+            "nullable": true
+          },
+          "acceptValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "culture": {
+            "$ref": "#/components/schemas/Culture"
+          },
+          "reproduction": {
+            "$ref": "#/components/schemas/Reproduction"
+          },
+          "seedAnalyses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SeedAnalysis"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SeedProtocolDto": {
+        "type": "object",
+        "properties": {
+          "specification": {
+            "type": "string",
+            "nullable": true
+          },
+          "executor": {
+            "type": "string",
+            "nullable": true
+          },
+          "variety": {
+            "type": "string",
+            "nullable": true
+          },
+          "germinationLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "sproutingEnergy": {
+            "type": "string",
+            "nullable": true
+          },
+          "germination": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SeedUpdateDto": {
+        "type": "object",
+        "properties": {
+          "cultureId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "reproductionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "uploadDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "acceptanceFile": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserLoginDto": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserRegisterDto": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "surname": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "JWT (пример: 'Bearer {token}')",
+        "scheme": "Bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

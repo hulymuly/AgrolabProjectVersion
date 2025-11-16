@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\appsettings.Development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:appsettings.Development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\Entities\\AgroLabDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Entities\\AgroLabDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 464,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAB4AAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T00:44:42.113Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-29T12:40:21.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-29T12:20:48.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AgroLabDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\Entities\\AgroLabDbContext.cs",
+              "RelativeDocumentMoniker": "Entities\\AgroLabDbContext.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u0414\u0440\u0430\u043A\u043E\u043D\\Desktop\\AgroLabProject\\AgroLab\\Entities\\AgroLabDbContext.cs",
+              "RelativeToolTip": "Entities\\AgroLabDbContext.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAHMAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T12:15:08.669Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 23,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

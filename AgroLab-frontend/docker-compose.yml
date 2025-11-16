@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agro-lab-app
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    networks:
+      - agro-network
+
+networks:
+  agro-network:
+    driver: bridge
